@@ -27,4 +27,4 @@
 # sed -i '13i KERNEL_PATCHVER:=5.4' target/linux/x86/Makefile
 
 sed -i '157d' config/Config-build.in
-sed -i '157i 		def_bool n' config/Config-build.in
+sed -i '157i def_bool n' config/Config-build.in
