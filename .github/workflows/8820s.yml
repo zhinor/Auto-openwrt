@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: 2100
+name: e8820s
 on:
   repository_dispatch:
   workflow_dispatch:
