@@ -11,7 +11,7 @@
 # See /LICENSE for more information.
 #
 
-name: lede小米2100
+name: Lede源码小米&红米2100
 on:
   repository_dispatch:
   workflow_dispatch:
