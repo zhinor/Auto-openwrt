@@ -18,7 +18,7 @@ on:
 
 env:
   REPO_URL: https://github.com/padavanonly/immortalwrtARM
-  REPO_BRANCH: mt7622
+  REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: H7621.config
   DIY_P1_SH: diy-part3.sh
