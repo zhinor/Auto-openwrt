@@ -11,16 +11,16 @@
 # See /LICENSE for more information.
 #
 
-name: 237的q30系列
+name: 237的6606系列
 on:
   repository_dispatch:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/padavanonly/immortalwrtARM
-  REPO_BRANCH: mt7981
+  REPO_URL: https://github.com/padavanonly/immortalwrt
+  REPO_BRANCH: mt7915_mtwifi
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: 237.config
+  CONFIG_FILE: 6606.config
   DIY_P1_SH: diy-part3.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
