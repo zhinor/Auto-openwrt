@@ -18,9 +18,9 @@ on:
 
 env:
   REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-23.05
-  REPO_BRANCH: openwrt-18.06-k5.4
+  REPO_BRANCH: openwrt-23.05
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: 18.config
+  CONFIG_FILE: H7981.config
   DIY_P1_SH: diy-part3.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
