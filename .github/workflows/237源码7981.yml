@@ -11,7 +11,7 @@
 # See /LICENSE for more information.
 #
 
-name: 237的1806系列
+name: 237的7981系列
 on:
   repository_dispatch:
   workflow_dispatch:
