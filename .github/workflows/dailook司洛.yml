@@ -85,7 +85,15 @@ jobs:
         make defconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
-        find dl -size -1024c -exec rm -f {} \;
+        # 增加容错机制：检查文件大小和有效性，删除损坏文件
+        find dl -size -1024c | while read file; do
+          if ! file "$file" | grep -q "cannot open"; then
+            echo "Deleting invalid file: $file"
+            rm -f "$file"
+          else
+            echo "Skipping file (invalid or empty): $file"
+          fi
+        done
 
     - name: Compile the firmware
       id: compile
