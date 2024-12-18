@@ -26,6 +26,7 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
+  MAX_FILE_SIZE: 100000000  # 文件大小限制为100MB（字节数）
 
 jobs:
   build:
@@ -116,6 +117,19 @@ jobs:
         echo "Firmware directory size:"
         du -sh ${{ env.FIRMWARE }}
       
+    - name: Split large firmware files (if needed)
+      run: |
+        firmware_path="${{ env.FIRMWARE }}"
+        max_size="${{ env.MAX_FILE_SIZE }}"
+        find $firmware_path -type f -exec du -b {} + | while read size file; do
+          if [ $size -gt $max_size ]; then
+            echo "File $file is too large, splitting..."
+            split -b $max_size $file "$file.part"
+            rm $file  # 删除原始大文件
+          fi
+        done
+        echo "Large files split successfully."
+
     - name: Upload bin directory
       uses: actions/upload-artifact@main
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
